@@ -11,8 +11,10 @@ using System.Windows.Shapes;
 
 namespace TuubiWebApp
 {
+    // Class to enable localization
     public class LocalizedStrings
     {
+        // Constructor
         public LocalizedStrings()
         {
         }

@@ -10,7 +10,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -30,6 +30,8 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <ScrollViewer Name="formViewer">
                 <StackPanel HorizontalAlignment="Stretch" Margin="6,6,0,0" Name="formPanel" VerticalAlignment="Top">
+                    
+                    <!--Security and explanation triggers-->
                     <Grid Name="grid1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
@@ -39,23 +41,29 @@
                         <TextBlock Name="securityShowExplanationTrigger" Text="{Binding Path=AppResources.securityShowExplanationTrigger, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Tap="securityShowExplanationTrigger_Tap" />
                         <TextBlock Name="securityHideExplanationTrigger" Text="{Binding Path=AppResources.securityHideExplanationTrigger, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Grid.Row="1" Grid.Column="1" Visibility="Collapsed" VerticalAlignment="Bottom" Tap="securityHideExplanationTrigger_Tap" />
                     </Grid>
-                    
+
+                    <!--Public computer radio button-->
                     <RadioButton Content="{Binding Path=AppResources.publicRadioButton, Source={StaticResource LocalizedStrings}}" Name="publicRadioButton" GroupName="securityRadioGroup" IsChecked="True" Checked="publicRadioButton_Checked" />
                     <TextBlock Name="publicRadioButtonHelp" Text="{Binding Path=AppResources.publicRadioButtonHelp, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" TextAlignment="Left" Visibility="Collapsed" />
-                    
+
+                    <!--Private computer radio button-->
                     <RadioButton Content="{Binding Path=AppResources.privateRadioButton, Source={StaticResource LocalizedStrings}}" Name="privateRadioButton" GroupName="securityRadioGroup" Checked="privateRadioButton_Checked" />
                     <TextBlock Name="privateRadioButtonHelp" Text="{Binding Path=AppResources.privateRadioButtonHelp, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" TextAlignment="Left" Visibility="Collapsed" />
                     <TextBlock Name="privateRadioButtonAlert" Text="{Binding Path=AppResources.privateRadioButtonAlert, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" TextAlignment="Left" Visibility="Collapsed" />
-                    
+
+                    <!--Light version checkbox-->
                     <CheckBox Content="{Binding Path=AppResources.lightVersionCheckbox, Source={StaticResource LocalizedStrings}}" Name="lightVersionCheckbox" Checked="lightVersionCheckbox_Checked" Unchecked="lightVersionCheckbox_Unchecked" />                    
                     <TextBlock Name="lightVersionCheckBoxAlert" Text="{Binding Path=AppResources.lightVersionCheckBoxAlert, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" Visibility="Collapsed" />
-                    
+
+                    <!--Username text box-->
                     <TextBlock Name="usernameTitle" Text="{Binding Path=AppResources.usernameTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" Margin="12,30,12,0" />
                     <TextBox Name="usernameInput" Text="" />
-                    
+
+                    <!--Password text box-->
                     <TextBlock Name="passwordTitle" Text="{Binding Path=AppResources.passwordTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" />
                     <TextBox Name="passwordInput" Text="" />
-                    
+
+                    <!--Sign in button-->
                     <TextBlock Name="errorMessage" Text="{Binding Path=AppResources.errorMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
                     <TextBlock Name="successMessage" Text="{Binding Path=AppResources.successMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
                     <Button Content="{Binding Path=AppResources.signInButton, Source={StaticResource LocalizedStrings}}" Name="signInButton" Width="160" HorizontalAlignment="Right" Margin="0,0,20,0" Click="signInButton_Click" />                    
@@ -63,17 +71,5 @@
             </ScrollViewer>
         </Grid>
     </Grid>
- 
-    <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
 
 </phone:PhoneApplicationPage>

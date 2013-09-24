@@ -21,33 +21,49 @@ namespace TuubiWebApp
             InitializeComponent();
         }
 
+        /**
+         * Handler function when signIn button is clicked 
+         */
         private void signInButton_Click(object sender, RoutedEventArgs e)
         {
             hideMessages();
 
-            if (!isValidUsername() || !isValidPassword()){
+            if (!isValidUsername() || !isValidPassword())
+            {
                 errorMessage.Visibility = Visibility.Visible;
                 return;
-            }      
+            }
             successMessage.Visibility = Visibility.Visible;
         }
 
+        /**
+         * Helper function for hiding error/success messages
+         */
         private void hideMessages()
         {
             successMessage.Visibility = Visibility.Collapsed;
             errorMessage.Visibility = Visibility.Collapsed;
-        }        
+        }
 
+        /**
+         * Validation method for Password
+         */
         private bool isValidPassword()
         {
             return !String.IsNullOrEmpty(passwordInput.Text);
         }
 
+        /**
+         * Validation method for Username
+         */
         private bool isValidUsername()
         {
             return !String.IsNullOrEmpty(usernameInput.Text);
         }
 
+        /**
+         * Handler function when private radio button is checked
+         */
         private void privateRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             if (privateRadioButtonAlert != null)
@@ -56,6 +72,9 @@ namespace TuubiWebApp
             }
         }
 
+        /**
+        * Handler function when public radio button is checked
+        */
         private void publicRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             if (privateRadioButtonAlert != null)
@@ -64,6 +83,9 @@ namespace TuubiWebApp
             }
         }
 
+        /**
+        * Handler function when light version checkbox is checked
+        */
         private void lightVersionCheckbox_Checked(object sender, RoutedEventArgs e)
         {
             if (lightVersionCheckBoxAlert != null)
@@ -72,6 +94,9 @@ namespace TuubiWebApp
             }
         }
 
+        /**
+        * Handler function when light version checkbox is UNchecked
+        */
         private void lightVersionCheckbox_Unchecked(object sender, RoutedEventArgs e)
         {
             if (lightVersionCheckBoxAlert != null)
@@ -80,6 +105,9 @@ namespace TuubiWebApp
             }
         }
 
+        /**
+        * Handler function when "SHOW security explanation" trigger checkbox is tapped
+        */
         private void securityShowExplanationTrigger_Tap(object sender, GestureEventArgs e)
         {
             publicRadioButtonHelp.Visibility = Visibility.Visible;
@@ -88,6 +116,9 @@ namespace TuubiWebApp
             securityHideExplanationTrigger.Visibility = Visibility.Visible;
         }
 
+        /**
+        * Handler function when "HIDE security explanation" trigger checkbox is tapped
+        */
         private void securityHideExplanationTrigger_Tap(object sender, GestureEventArgs e)
         {
             publicRadioButtonHelp.Visibility = Visibility.Collapsed;

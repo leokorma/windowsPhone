@@ -61,7 +61,7 @@ namespace TuubiWebApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to METROPOLIA.
+        ///   Looks up a localized string similar to Assigment.
         /// </summary>
         public static string ApplicationTitle {
             get {
