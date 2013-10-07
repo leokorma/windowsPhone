@@ -20,16 +20,27 @@ Additional features:
 ---
 
 ### Assigment 2
-######[Deadline: ?]
+######[Deadline: 20.10.2013]
 
-TODO
+WP7 Weather app.
+
+Grading details (in total 10 points):
+* UI components and layout construction (2 points)
+* Networking handling (3 points)
+* Tombstoning handling (4 points)
+* Code structure and comment (1 point)
+
+Additional features:
+* Orientation support
+* Scrolling screen
+* Localization
 
 ---
 
-### Final Project: Dayride
+### Final Project: Calendar app
 ######[Deadline: 28.11.2013]
 
-Driving school management software for Windows Phone.
+WP7 Calendar app.
 
 Grading details:
 * Localization
@@ -47,4 +58,4 @@ Grading details:
   * Use of open source components
     * RestSharp
 * Cloud service RESTful API support
-  * Parse.com
+  * ???
