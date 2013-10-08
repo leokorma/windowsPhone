@@ -1,0 +1,46 @@
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\Bin\Debug\ApplicationIcon.png
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\Bin\Debug\Background.png
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\Bin\Debug\TuubiWebApp.dll
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\Bin\Debug\TuubiWebApp.pdb
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\Bin\Debug\AppManifest.xaml
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\Bin\Debug\TuubiWebApp.xap
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\obj\Debug\App.g.i.cs
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\obj\Debug\MainPage.g.i.cs
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\obj\Debug\TuubiWebApp.g.resources
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\obj\Debug\TuubiWebApp.dll
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\obj\Debug\TuubiWebApp.pdb
+c:\users\javiero\documents\visual studio 2010\Projects\TuubiWebApp\TuubiWebApp\obj\Debug\XapCacheFile.xml
+C:\Users\javiero\Documents\Visual Studio 2010\Projects\TuubiWebApp\TuubiWebApp\obj\Debug\TuubiWebApp.AppResources.resources
+C:\Users\javiero\Documents\Visual Studio 2010\Projects\TuubiWebApp\TuubiWebApp\obj\Debug\TuubiWebApp.csproj.GenerateResource.Cache
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\Bin\Debug\ApplicationIcon.png
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\Bin\Debug\Background.png
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\Bin\Debug\TuubiWebApp.dll
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\Bin\Debug\TuubiWebApp.pdb
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\Bin\Debug\AppManifest.xaml
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\Bin\Debug\TuubiWebApp.xap
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\App.g.i.cs
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\MainPage.g.i.cs
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\TuubiWebApp.g.resources
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\TuubiWebApp.AppResources.resources
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\TuubiWebApp.dll
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\TuubiWebApp.pdb
+C:\Users\javier\Desktop\windowsPhone\Assigments\TuubiWebApp\obj\Debug\XapCacheFile.xml
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\Bin\Debug\ApplicationIcon.png
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\Bin\Debug\Background.png
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\Bin\Debug\TuubiWebApp.dll
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\Bin\Debug\TuubiWebApp.pdb
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\Bin\Debug\AppManifest.xaml
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\Bin\Debug\TuubiWebApp.xap
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\App.g.i.cs
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\MainPage.g.i.cs
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\TuubiWebApp.g.resources
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\TuubiWebApp.AppResources.resources
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\TuubiWebApp.dll
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\TuubiWebApp.pdb
+C:\Users\javier\Desktop\windowsPhone\Assigment1\TuubiWebApp\obj\Debug\XapCacheFile.xml
