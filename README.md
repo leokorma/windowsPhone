@@ -42,6 +42,8 @@ Additional features:
 
 WP7 Calendar app.
 
+Application that uses MongoHQ as database backend and syncronizes app events with mobile calendar.
+
 Grading details:
 * Localization
 * M-V-MV architecture
@@ -56,6 +58,5 @@ Grading details:
   * Orientation support
   * Context menu support
   * Use of open source components
-    * RestSharp
 * Cloud service RESTful API support
-  * ???
+  * MongoHQ
