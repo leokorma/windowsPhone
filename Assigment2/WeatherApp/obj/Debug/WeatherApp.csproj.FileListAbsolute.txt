@@ -1,0 +1,16 @@
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\ApplicationIcon.png
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\Background.png
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\WeatherApp.dll
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\WeatherApp.pdb
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\App.g.i.cs
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\MainPage.g.i.cs
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\WeatherApp.g.resources
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\WeatherApp.AppResources.resources
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\WeatherApp.dll
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\WeatherApp.pdb
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\AppManifest.xaml
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\WeatherApp.xap
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\XapCacheFile.xml
