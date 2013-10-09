@@ -1,8 +1,9 @@
-﻿<xapCache source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\WeatherApp.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="09/10/2013 12:59:27">
+﻿<xapCache source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\WeatherApp.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="09/10/2013 18:54:30">
   <file source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="09/10/2013 12:59:26" />
   <file source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Background.png" archivePath="Background.png" lastWriteTime="09/10/2013 12:45:18" />
   <file source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="09/10/2013 12:45:18" />
-  <file source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\WeatherApp.dll" archivePath="WeatherApp.dll" lastWriteTime="09/10/2013 12:59:27" />
+  <file source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\WeatherApp.dll" archivePath="WeatherApp.dll" lastWriteTime="09/10/2013 18:54:30" />
+  <file source="C:\Users\javier\Desktop\windowsPhone\Assigment2\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="09/10/2013 18:18:11" />
   <file source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="09/10/2013 12:45:18" />
-  <file source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="09/10/2013 12:59:27" />
+  <file source="C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="09/10/2013 18:53:17" />
 </xapCache>

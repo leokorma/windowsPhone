@@ -21,110 +21,33 @@ namespace WeatherApp
             InitializeComponent();
         }
 
-        /**
-         * Handler function when signIn button is clicked 
-         */
-        private void signInButton_Click(object sender, RoutedEventArgs e)
+        private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             hideMessages();
 
-            if (!isValidUsername() || !isValidPassword())
+            if (!isValidSearchText())
             {
-                errorMessage.Visibility = Visibility.Visible;
+                searchBlankMessage.Visibility = Visibility.Visible;
                 return;
             }
-            successMessage.Visibility = Visibility.Visible;
+
+            NavigationService.Navigate(new Uri("/views/Results.xaml?regex=" + searchInput.Text + "&isCityName=" + cityNameRadioButton.IsChecked, UriKind.Relative));
         }
 
         /**
-         * Helper function for hiding error/success messages
+         * Helper function for hiding messages
          */
         private void hideMessages()
         {
-            successMessage.Visibility = Visibility.Collapsed;
-            errorMessage.Visibility = Visibility.Collapsed;
+            searchBlankMessage.Visibility = Visibility.Collapsed;
         }
 
         /**
-         * Validation method for Password
+         * Validation method for Search Text
          */
-        private bool isValidPassword()
+        private bool isValidSearchText()
         {
-            return !String.IsNullOrEmpty(passwordInput.Text);
-        }
-
-        /**
-         * Validation method for Username
-         */
-        private bool isValidUsername()
-        {
-            return !String.IsNullOrEmpty(usernameInput.Text);
-        }
-
-        /**
-         * Handler function when private radio button is checked
-         */
-        private void privateRadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            if (privateRadioButtonAlert != null)
-            {
-                privateRadioButtonAlert.Visibility = Visibility.Visible;
-            }
-        }
-
-        /**
-        * Handler function when public radio button is checked
-        */
-        private void publicRadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            if (privateRadioButtonAlert != null)
-            {
-                privateRadioButtonAlert.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        /**
-        * Handler function when light version checkbox is checked
-        */
-        private void lightVersionCheckbox_Checked(object sender, RoutedEventArgs e)
-        {
-            if (lightVersionCheckBoxAlert != null)
-            {
-                lightVersionCheckBoxAlert.Visibility = Visibility.Visible;
-            }
-        }
-
-        /**
-        * Handler function when light version checkbox is UNchecked
-        */
-        private void lightVersionCheckbox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            if (lightVersionCheckBoxAlert != null)
-            {
-                lightVersionCheckBoxAlert.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        /**
-        * Handler function when "SHOW security explanation" trigger checkbox is tapped
-        */
-        private void securityShowExplanationTrigger_Tap(object sender, GestureEventArgs e)
-        {
-            publicRadioButtonHelp.Visibility = Visibility.Visible;
-            privateRadioButtonHelp.Visibility = Visibility.Visible;
-            securityShowExplanationTrigger.Visibility = Visibility.Collapsed;
-            securityHideExplanationTrigger.Visibility = Visibility.Visible;
-        }
-
-        /**
-        * Handler function when "HIDE security explanation" trigger checkbox is tapped
-        */
-        private void securityHideExplanationTrigger_Tap(object sender, GestureEventArgs e)
-        {
-            publicRadioButtonHelp.Visibility = Visibility.Collapsed;
-            privateRadioButtonHelp.Visibility = Visibility.Collapsed;
-            securityShowExplanationTrigger.Visibility = Visibility.Visible;
-            securityHideExplanationTrigger.Visibility = Visibility.Collapsed;
+            return !String.IsNullOrEmpty(searchInput.Text);
         }
     }
 }

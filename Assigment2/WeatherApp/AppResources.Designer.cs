@@ -70,34 +70,34 @@ namespace WeatherApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The user name or password you entered isn&apos;t correct. Try entering it again..
+        ///   Looks up a localized string similar to City Code.
         /// </summary>
-        public static string errorMessage {
+        public static string cityCodeRadioButton {
             get {
-                return ResourceManager.GetString("errorMessage", resourceCulture);
+                return ResourceManager.GetString("cityCodeRadioButton", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use light version of Outlook Web App.
+        ///   Looks up a localized string similar to City Name.
         /// </summary>
-        public static string lightVersionCheckbox {
+        public static string cityNameRadioButton {
             get {
-                return ResourceManager.GetString("lightVersionCheckbox", resourceCulture);
+                return ResourceManager.GetString("cityNameRadioButton", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The light version of Outlook Web App includes fewer features. Use it if you&apos;re on a slow connection or using a computer with unusually strict browser security settings. We also support the full Outlook Web App experience on some browsers on Windows, Mac, and Linux computers. To check out all the supported browsers and operating systems, click here..
+        ///   Looks up a localized string similar to There was an error when searching for results.
         /// </summary>
-        public static string lightVersionCheckBoxAlert {
+        public static string errorResultsMessage {
             get {
-                return ResourceManager.GetString("lightVersionCheckBoxAlert", resourceCulture);
+                return ResourceManager.GetString("errorResultsMessage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mail web app.
+        ///   Looks up a localized string similar to weather app.
         /// </summary>
         public static string PageTitle {
             get {
@@ -106,110 +106,38 @@ namespace WeatherApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password.
+        ///   Looks up a localized string similar to Results.
         /// </summary>
-        public static string passwordTitle {
+        public static string resultsTitle {
             get {
-                return ResourceManager.GetString("passwordTitle", resourceCulture);
+                return ResourceManager.GetString("resultsTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is a private computer.
+        ///   Looks up a localized string similar to Text cannot be empty..
         /// </summary>
-        public static string privateRadioButton {
+        public static string searchBlankMessage {
             get {
-                return ResourceManager.GetString("privateRadioButton", resourceCulture);
+                return ResourceManager.GetString("searchBlankMessage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warning: By selecting this option, you confirm that this computer complies with your organization&apos;s security policy..
+        ///   Looks up a localized string similar to Search.
         /// </summary>
-        public static string privateRadioButtonAlert {
+        public static string searchButton {
             get {
-                return ResourceManager.GetString("privateRadioButtonAlert", resourceCulture);
+                return ResourceManager.GetString("searchButton", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select this option if you&apos;re the only person who uses this computer. Your server will allow a longer period of inactivity before signing you out..
+        ///   Looks up a localized string similar to Please write here a city name or code.
         /// </summary>
-        public static string privateRadioButtonHelp {
+        public static string searchTitle {
             get {
-                return ResourceManager.GetString("privateRadioButtonHelp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This is a public or shared computer.
-        /// </summary>
-        public static string publicRadioButton {
-            get {
-                return ResourceManager.GetString("publicRadioButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select this option if you use Outlook Web App on a public computer. Be sure to sign out when you&apos;ve finished and close all windows to end your session..
-        /// </summary>
-        public static string publicRadioButtonHelp {
-            get {
-                return ResourceManager.GetString("publicRadioButtonHelp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to hide explanation.
-        /// </summary>
-        public static string securityHideExplanationTrigger {
-            get {
-                return ResourceManager.GetString("securityHideExplanationTrigger", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to show explanation.
-        /// </summary>
-        public static string securityShowExplanationTrigger {
-            get {
-                return ResourceManager.GetString("securityShowExplanationTrigger", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Security.
-        /// </summary>
-        public static string securityTitle {
-            get {
-                return ResourceManager.GetString("securityTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign In.
-        /// </summary>
-        public static string signInButton {
-            get {
-                return ResourceManager.GetString("signInButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Login successful!.
-        /// </summary>
-        public static string successMessage {
-            get {
-                return ResourceManager.GetString("successMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Username.
-        /// </summary>
-        public static string usernameTitle {
-            get {
-                return ResourceManager.GetString("usernameTitle", resourceCulture);
+                return ResourceManager.GetString("searchTitle", resourceCulture);
             }
         }
     }

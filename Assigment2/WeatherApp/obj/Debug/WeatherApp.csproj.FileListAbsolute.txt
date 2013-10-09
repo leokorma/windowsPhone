@@ -14,3 +14,6 @@ C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\WeatherApp.
 C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\AppManifest.xaml
 C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\WeatherApp.xap
 C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\XapCacheFile.xml
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\obj\Debug\views\Results.g.i.cs
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\Newtonsoft.Json.dll
+C:\Users\javier\Desktop\windowsPhone\Assigment2\WeatherApp\Bin\Debug\Newtonsoft.Json.xml
