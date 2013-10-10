@@ -144,4 +144,7 @@
   <data name="searchTitle" xml:space="preserve">
     <value>Please write here a city name or code</value>
   </data>
+  <data name="noResultsMessage" xml:space="preserve">
+    <value>No Results Found</value>
+  </data>
 </root>

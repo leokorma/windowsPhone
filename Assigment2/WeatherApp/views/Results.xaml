@@ -40,6 +40,17 @@
                     <TextBlock Name="resultsTitle" Text="{Binding Path=AppResources.resultsTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" />
                     <TextBlock Name="errorResultsMessage" Text="{Binding Path=AppResources.errorResultsMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
 
+                    <TextBlock Name="noResultsMessage" Text="{Binding Path=AppResources.noResultsMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
+
+                    <ListBox Name="ResultsListBox" DataContext="{Binding}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

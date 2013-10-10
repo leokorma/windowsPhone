@@ -70,7 +70,12 @@ namespace WeatherApp
                
             string json = e.Result;
             PlaceJson placeJson = JsonConvert.DeserializeObject<PlaceJson>(json);
-            //printResults
+            if (placeJson.query.count <= 0)
+            {
+                noResultsMessage.Visibility = Visibility.Visible;
+                return;
+            }
+            ResultsListBox.DataContext = placeJson.query.results.place;
         }
 
         private void processResultsByCode(object sender, DownloadStringCompletedEventArgs e)
@@ -88,6 +93,7 @@ namespace WeatherApp
         private void hideMessages()
         {
             errorResultsMessage.Visibility = Visibility.Collapsed;
+            noResultsMessage.Visibility = Visibility.Collapsed;
         }
     }
 }
