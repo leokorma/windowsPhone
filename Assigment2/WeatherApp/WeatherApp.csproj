@@ -73,11 +73,17 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\ObservableObject.cs" />
     <Compile Include="Model\Place.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\ResultViewModel.cs" />
-    <Compile Include="View\ResultView.xaml.cs">
-      <DependentUpon>ResultView.xaml</DependentUpon>
+    <Compile Include="UserDefinedExceptions\NoResultsException.cs" />
+    <Compile Include="UserDefinedExceptions\ErrorResultsException.cs" />
+    <Compile Include="ViewModel\ResultsViewModel.cs" />
+    <Compile Include="View\ResultsControl.xaml.cs">
+      <DependentUpon>ResultsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ResultsPage.xaml.cs">
+      <DependentUpon>ResultsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -89,7 +95,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ResultView.xaml">
+    <Page Include="View\ResultsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ResultsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

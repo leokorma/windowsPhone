@@ -10,6 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using WeatherApp.Model;
 
 namespace WeatherApp.models
 {
@@ -19,11 +20,50 @@ namespace WeatherApp.models
         public string content { get; set; }
     }
 
-    public class Place
+    public class Place : ObservableObject
     {
-        public string woeid { get; set; }
-        public string name { get; set; }
-        public Country country { get; set; }
+        private string _woeid;
+        private string _name;
+        private Country _country;
+
+        // Create the property that will be the source of the binding.
+        public string woeid
+        {
+            get { return _woeid; }
+            set
+            {
+                _woeid = value;
+                // Call NotifyPropertyChanged when the source property 
+                // is updated.
+                NotifyPropertyChanged("woeid");
+            }
+        }
+
+        // Create the property that will be the source of the binding.
+        public string name
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                // Call NotifyPropertyChanged when the source property 
+                // is updated.
+                NotifyPropertyChanged("name");
+            }
+        }
+
+        // Create the property that will be the source of the binding.
+        public Country country
+        {
+            get { return _country; }
+            set
+            {
+                _country = value;
+                // Call NotifyPropertyChanged when the source property 
+                // is updated.
+                NotifyPropertyChanged("country");
+            }
+        }
     }
 
     public class Results
