@@ -31,7 +31,7 @@ namespace WeatherApp
                 return;
             }
 
-            NavigationService.Navigate(new Uri("/View/ResultsPage.xaml?regex=" + searchInput.Text + "&isCityName=" + cityNameRadioButton.IsChecked, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/View/PlacePage.xaml?regex=" + searchInput.Text + "&isCityName=" + cityNameRadioButton.IsChecked, UriKind.Relative));
         }
 
         /**

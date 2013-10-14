@@ -13,18 +13,17 @@ using Microsoft.Phone.Controls;
 using WeatherApp.ViewModel;
 using WeatherApp.models;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace WeatherApp.View
 {
-    public partial class ResultsPage : PhoneApplicationPage
+    public partial class PlacePage : PhoneApplicationPage
     {
-        private ResultsViewModel vm;
-
         // Constructor
-        public ResultsPage()
+        public PlacePage()
         {
             InitializeComponent();
-            vm = new ResultsViewModel();
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -32,6 +31,7 @@ namespace WeatherApp.View
             base.OnNavigatedTo(e);
 
             hideMessages();
+            this.PlaceList.ItemsSource = new List<Place>();
 
             string regex = "";
             NavigationContext.QueryString.TryGetValue("regex", out regex);
@@ -42,23 +42,20 @@ namespace WeatherApp.View
             if (String.IsNullOrWhiteSpace(regex) || string.IsNullOrWhiteSpace(isCityName))
             {
                 errorResultsMessage.Visibility = Visibility.Visible;
-                ResultsControlOnPage.DataContext = new List<Place>();
                 return;
             }
 
-            try
-            {
-                vm.searchResults(regex, isCityName);
-                //ResultsControlOnPage.DataContext = vm.Places;
-            }
-            catch (ErrorResultsException)
-            {
-                errorResultsMessage.Visibility = Visibility.Visible;
-            }
-            catch (NoResultsException)
+            // call the rate service
+            var service = new PlaceViewModel();
+            service.searchPlaces(regex, isCityName, updateList);
+        }
+
+        private void updateList(List<Place> places) {
+            if (places == null || places.Count <= 0)
             {
                 noResultsMessage.Visibility = Visibility.Visible;
             }
+            this.PlaceList.ItemsSource = places;
         }
 
         /**
