@@ -145,5 +145,12 @@ namespace WeatherApp.Model
     public class Weather
     {
         public Query query { get; set; }
+
+        private string _fullTemp;
+        public string fullTemp
+        {
+            get { return this.query.results.channel.item.condition.temp + this.query.results.channel.units.temperature; }
+            set { _fullTemp = value; }
+        }
     }
 }

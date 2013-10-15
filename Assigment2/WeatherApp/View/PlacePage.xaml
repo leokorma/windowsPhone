@@ -40,7 +40,7 @@
                 <TextBlock Name="noResultsMessage" Text="{Binding Path=AppResources.noResultsMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
             </StackPanel>
             
-            <ListBox Name="PlaceList" Margin="0,12,0,0" ItemsSource="{Binding ResultsViewModel}" Grid.Row="1" Tap="GetWeatherByPlace">
+            <ListBox Name="PlaceList" Margin="0,12,0,0" Grid.Row="1" Tap="GetWeatherByPlace">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border BorderThickness="10,0,0,0" BorderBrush="{StaticResource PhoneAccentBrush}" Margin="12,0,12,10">

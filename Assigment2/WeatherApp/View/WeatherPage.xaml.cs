@@ -15,6 +15,8 @@ using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using WeatherApp.Model;
+using System.Windows.Resources;
+using System.IO;
 
 namespace WeatherApp.View
 {
@@ -31,6 +33,7 @@ namespace WeatherApp.View
             base.OnNavigatedTo(e);
 
             hideMessages();
+            hideContainers();
 
             string woeid = "";
             NavigationContext.QueryString.TryGetValue("woeid", out woeid);
@@ -45,21 +48,32 @@ namespace WeatherApp.View
             service.searchPlacesByCodeName(woeid, updateUI);
         }
 
-        private void updateUI(Weather weather) {
-            cityTitle.Text = "";
-            
-            if (weather == null) {
+        private void updateUI(Weather weather)
+        {
+            this.cityTitle.Text = "";
+            this.todayTemperature.Text = "";
+            this.ForecastList.ItemsSource = new List<Forecast>();
+
+            if (weather == null)
+            {
                 noWeatherMessage.Visibility = Visibility.Visible;
                 return;
             }
-                        
+
             if (weather.query.results.channel.title.Contains("Error"))
             {
-                errorWoeidMessage.Visibility = Visibility.Visible;
+                errorWoeidMessage.Visibility = Visibility.Visible;                
                 return;
             }
 
-            cityTitle.Text = weather.query.results.channel.location.city + ", " + weather.query.results.channel.location.country;
+            this.cityTitle.Text = weather.query.results.channel.location.city + ", " + weather.query.results.channel.location.country;
+
+            this.todayTemperature.Text = weather.fullTemp;
+
+            this.ForecastList.ItemsSource = weather.query.results.channel.item.forecast;
+
+            this.todayWeather.Visibility = Visibility.Visible;
+            this.ForecastList.Visibility = Visibility.Visible;
         }
 
         /**
@@ -69,6 +83,12 @@ namespace WeatherApp.View
         {
             errorWoeidMessage.Visibility = Visibility.Collapsed;
             noWeatherMessage.Visibility = Visibility.Collapsed;
+        }
+
+        private void hideContainers()
+        {
+            this.todayWeather.Visibility = Visibility.Collapsed;
+            this.ForecastList.Visibility = Visibility.Collapsed;
         }
     }
 }

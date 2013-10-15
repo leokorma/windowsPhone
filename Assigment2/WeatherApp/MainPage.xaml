@@ -38,7 +38,7 @@
                 <StackPanel HorizontalAlignment="Stretch" Margin="6,6,0,0" Name="searchPanel" VerticalAlignment="Top">
 
                     <TextBlock Name="searchTitle" Text="{Binding Path=AppResources.searchTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
-                    <TextBox Name="searchInput" Text="" />
+                    <TextBox Name="searchInput" Text="" TextChanged="searchInput_TextChanged" />
                     <TextBlock Name="searchBlankMessage" Text="{Binding Path=AppResources.searchBlankMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
                     <TextBlock Name="wrongWoeidMessage" Text="{Binding Path=AppResources.wrongWoeidMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
 

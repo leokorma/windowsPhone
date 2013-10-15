@@ -151,12 +151,15 @@
     <value>Select one city to see the weather</value>
   </data>
   <data name="errorWoeidMessage" xml:space="preserve">
-    <value>There was an error when searching for weather</value>
+    <value>An error occurred when searching for weather. Please press back button and try again.</value>
   </data>
   <data name="noWeatherMessage" xml:space="preserve">
     <value>No weather found</value>
   </data>
   <data name="wrongWoeidMessage" xml:space="preserve">
     <value>Woeid must be a positive number</value>
+  </data>
+  <data name="now" xml:space="preserve">
+    <value>Now</value>
   </data>
 </root>

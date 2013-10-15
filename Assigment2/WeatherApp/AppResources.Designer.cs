@@ -97,7 +97,7 @@ namespace WeatherApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There was an error when searching for weather.
+        ///   Looks up a localized string similar to An error occurred when searching for weather. Please press back button and try again..
         /// </summary>
         public static string errorWoeidMessage {
             get {
@@ -111,6 +111,15 @@ namespace WeatherApp {
         public static string noResultsMessage {
             get {
                 return ResourceManager.GetString("noResultsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now.
+        /// </summary>
+        public static string now {
+            get {
+                return ResourceManager.GetString("now", resourceCulture);
             }
         }
         

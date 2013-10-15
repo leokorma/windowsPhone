@@ -82,5 +82,10 @@ namespace WeatherApp
                 return false;
             }
         }
+
+        private void searchInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            hideMessages();
+        }
     }
 }

@@ -30,14 +30,39 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <StackPanel>
-                <TextBlock Name="cityTitle" Style="{StaticResource PhoneTextLargeStyle}" />
+                <TextBlock Name="cityTitle" Style="{StaticResource PhoneTextLargeStyle}"/>
                 <TextBlock Name="errorWoeidMessage" Text="{Binding Path=AppResources.errorWoeidMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
                 <TextBlock Name="noWeatherMessage" Text="{Binding Path=AppResources.noWeatherMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
             </StackPanel>
+
+            <Grid Name="todayWeather" Grid.Row="1" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Name="now" Text="{Binding Path=AppResources.now, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" VerticalAlignment="Bottom" />
+                <TextBlock Grid.Column="1" Name="todayTemperature" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="140" Margin="0,0,0,-30"/>
+            </Grid>
+
+            <ListBox Name="ForecastList" Grid.Row="2" Margin="0,30,0,0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="10,0,0,0" BorderBrush="{StaticResource PhoneAccentBrush}" Margin="12,0,12,10">
+                            <StackPanel>
+                                <TextBlock Text="{Binding date}" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" />
+                                <TextBlock Text="{Binding text}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
         </Grid>
     </Grid>
 
