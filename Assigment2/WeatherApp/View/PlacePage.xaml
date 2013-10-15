@@ -28,22 +28,27 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
             <StackPanel>
                 <TextBlock Text="{Binding Path=AppResources.resultsTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" />
+                <TextBlock Name="selectResultsMessage" Text="{Binding Path=AppResources.selectResultsMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
                 <TextBlock Name="errorResultsMessage" Text="{Binding Path=AppResources.errorResultsMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
                 <TextBlock Name="noResultsMessage" Text="{Binding Path=AppResources.noResultsMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
-
-                <ListBox Name="PlaceList" Margin="0,12,0,0" ItemsSource="{Binding ResultsViewModel}" >
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock Text="{Binding fullName}" TextWrapping="Wrap" 
-                                               Style="{StaticResource PhoneTextNormalStyle}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
             </StackPanel>
+            
+            <ListBox Name="PlaceList" Margin="0,12,0,0" ItemsSource="{Binding ResultsViewModel}" Grid.Row="1" Tap="GetWeatherByPlace">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="10,0,0,0" BorderBrush="{StaticResource PhoneAccentBrush}" Margin="12,0,12,10">
+                            <TextBlock Text="{Binding FullName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" />
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
     </Grid>
 

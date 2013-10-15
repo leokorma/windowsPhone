@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace WeatherApp.models
+namespace WeatherApp.Model
 {
     public class Country
     {
@@ -25,25 +25,43 @@ namespace WeatherApp.models
         public string name { get; set; }
         public Country country { get; set; }
 
-        public string fullName()
+        private string _fullName;
+        public string FullName
         {
-            return name + ((country != null) ? country.code : "");
+            get { return name + ((country != null) ?", " + country.content : ""); }
+            set { _fullName = value; }
         }
     }
 
-    public class Results
+    public class MultiPlaceResults
     {
         public List<Place> place { get; set; }
     }
 
-    public class PlaceQuery
+    public class OnePlaceResults
     {
-        public int count { get; set; }
-        public Results results { get; set; }
+        public Place place { get; set; }
     }
 
-    public class PlaceJson
+    public class MultiPlaceQuery
     {
-        public PlaceQuery query { get; set; }
+        public int count { get; set; }
+        public MultiPlaceResults results { get; set; }
+    }
+
+    public class OnePlaceQuery
+    {
+        public int count { get; set; }
+        public OnePlaceResults results { get; set; }
+    }
+
+    public class MultiPlaceJson
+    {
+        public MultiPlaceQuery query { get; set; }
+    }
+
+    public class OnePlaceJson
+    {
+        public OnePlaceQuery query { get; set; }
     }
 }

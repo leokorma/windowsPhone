@@ -8,28 +8,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using WeatherApp.models;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
+using WeatherApp.Model;
 
 namespace WeatherApp.ViewModel
 {
     public class PlaceViewModel
     {
-        public void searchPlaces(string regex, string isCityName, Action<List<Place>> callback)
-        {
-            if (Convert.ToBoolean(isCityName))
-            {
-                searchPlacesByCityName(regex, callback);
-            }
-            else
-            {
-                searchPlacesByCodeName(regex, callback);
-            }
-        }
-
-        private void searchPlacesByCityName(String name, Action<List<Place>> callback)
+        public void searchPlacesByCityName(String name, Action<List<Place>> callback)
         {
             string uri = "http://query.yahooapis.com/v1/public/yql?format=json&q=select * from geo.places where text='" + name + "'";
 
@@ -38,7 +26,7 @@ namespace WeatherApp.ViewModel
             client.DownloadStringAsync(new Uri(uri), callback);
         }
 
-        private void searchPlacesByCodeName(String code, Action<List<Place>> callback)
+        public void searchPlacesByCodeName(String code, Action<Weather> callback)
         {
             string uri = "http://query.yahooapis.com/v1/public/yql?format=json&q=select * from weather.forecast where woeid=" + code;
 
@@ -54,10 +42,12 @@ namespace WeatherApp.ViewModel
             if (e.Error == null)
             {
                 string json = e.Result;
-                PlaceJson placeJson = JsonConvert.DeserializeObject<PlaceJson>(json);
-                if (placeJson.query.count > 0)
+
+                try
                 {
-                    places = placeJson.query.results.place;
+                    places = parseMultiplePlaces(json);
+                }catch(Exception){
+                    places = parseUniquePlace(json);
                 }
             }
             
@@ -68,19 +58,46 @@ namespace WeatherApp.ViewModel
             return;
         }
 
-        private void processPlacesByCode(object sender, DownloadStringCompletedEventArgs e)
+        private List<Place> parseMultiplePlaces(string json)
         {
             List<Place> places = new List<Place>();
 
+            MultiPlaceJson placeJson = JsonConvert.DeserializeObject<MultiPlaceJson>(json);
+            if (placeJson.query.count > 0)
+            {
+                places = placeJson.query.results.place;
+            }
+
+            return places;
+        }
+
+        private List<Place> parseUniquePlace(string json)
+        {
+            List<Place> places = new List<Place>();
+
+            OnePlaceJson placeJson = JsonConvert.DeserializeObject<OnePlaceJson>(json);
+            if (placeJson.query.count > 0)
+            {
+                places.Add(placeJson.query.results.place);
+            }
+
+            return places;
+        }
+
+        private void processPlacesByCode(object sender, DownloadStringCompletedEventArgs e)
+        {
+            Weather weather = null;
+
             if (e.Error == null)
             {
-                // DO SOMETHING
+                string json = e.Result;
+                weather = JsonConvert.DeserializeObject<Weather>(json); 
             }
 
             // if a callback was specified, call it passing the rate.
-            var callback = (Action<List<Place>>)e.UserState;
+            var callback = (Action<Weather>)e.UserState;
             if (callback != null)
-                callback(places);
+                callback(weather);
             return;
         }
     }

@@ -147,4 +147,16 @@
   <data name="noResultsMessage" xml:space="preserve">
     <value>No Results Found</value>
   </data>
+  <data name="selectResultsMessage" xml:space="preserve">
+    <value>Select one city to see the weather</value>
+  </data>
+  <data name="errorWoeidMessage" xml:space="preserve">
+    <value>There was an error when searching for weather</value>
+  </data>
+  <data name="noWeatherMessage" xml:space="preserve">
+    <value>No weather found</value>
+  </data>
+  <data name="wrongWoeidMessage" xml:space="preserve">
+    <value>Woeid must be a positive number</value>
+  </data>
 </root>

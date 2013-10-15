@@ -11,10 +11,10 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using WeatherApp.ViewModel;
-using WeatherApp.models;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using WeatherApp.Model;
 
 namespace WeatherApp.View
 {
@@ -36,18 +36,14 @@ namespace WeatherApp.View
             string regex = "";
             NavigationContext.QueryString.TryGetValue("regex", out regex);
 
-            string isCityName = "";
-            NavigationContext.QueryString.TryGetValue("isCityName", out isCityName);
-
-            if (String.IsNullOrWhiteSpace(regex) || string.IsNullOrWhiteSpace(isCityName))
+            if (String.IsNullOrWhiteSpace(regex))
             {
                 errorResultsMessage.Visibility = Visibility.Visible;
                 return;
             }
 
-            // call the rate service
             var service = new PlaceViewModel();
-            service.searchPlaces(regex, isCityName, updateList);
+            service.searchPlacesByCityName(regex, updateList);
         }
 
         private void updateList(List<Place> places) {
@@ -65,6 +61,24 @@ namespace WeatherApp.View
         {
             errorResultsMessage.Visibility = Visibility.Collapsed;
             noResultsMessage.Visibility = Visibility.Collapsed;
+        }
+
+        private void GetWeatherByPlace(object sender, GestureEventArgs e)
+        {
+            // íf selected index is -1 (no selection), do nothing
+            if (PlaceList.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            Place p = (Place)PlaceList.SelectedItem;
+            if (p != null) {
+                NavigationService.Navigate(new Uri("/View/WeatherPage.xaml?woeid=" + p.woeid, UriKind.Relative));
+                return;
+            }
+            
+            // rest the selected index
+            PlaceList.SelectedIndex = -1;
         }
     }
 }

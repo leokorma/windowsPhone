@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="WeatherApp.MainPage"
+    x:Class="WeatherApp.View.WeatherPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -33,22 +33,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
-            <!--Search Block-->
-            <ScrollViewer Name="searchViewer">
-                <StackPanel HorizontalAlignment="Stretch" Margin="6,6,0,0" Name="searchPanel" VerticalAlignment="Top">
-
-                    <TextBlock Name="searchTitle" Text="{Binding Path=AppResources.searchTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
-                    <TextBox Name="searchInput" Text="" />
-                    <TextBlock Name="searchBlankMessage" Text="{Binding Path=AppResources.searchBlankMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
-                    <TextBlock Name="wrongWoeidMessage" Text="{Binding Path=AppResources.wrongWoeidMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
-
-                    <RadioButton Content="{Binding Path=AppResources.cityNameRadioButton, Source={StaticResource LocalizedStrings}}" Name="cityNameRadioButton" GroupName="searchRadioGroup" IsChecked="True" />
-                    <RadioButton Content="{Binding Path=AppResources.cityCodeRadioButton, Source={StaticResource LocalizedStrings}}" Name="cityCodeRadioButton" GroupName="searchRadioGroup" />
-
-                    <Button Content="{Binding Path=AppResources.searchButton, Source={StaticResource LocalizedStrings}}" Name="searchButton" Width="160" HorizontalAlignment="Right" Margin="0,0,20,0" Click="searchButton_Click" />
-                    
-                </StackPanel>                
-            </ScrollViewer>
+            <StackPanel>
+                <TextBlock Name="cityTitle" Style="{StaticResource PhoneTextLargeStyle}" />
+                <TextBlock Name="errorWoeidMessage" Text="{Binding Path=AppResources.errorWoeidMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
+                <TextBlock Name="noWeatherMessage" Text="{Binding Path=AppResources.noWeatherMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
+            </StackPanel>
         </Grid>
     </Grid>
 

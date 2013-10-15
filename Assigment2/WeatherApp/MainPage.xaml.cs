@@ -31,7 +31,20 @@ namespace WeatherApp
                 return;
             }
 
-            NavigationService.Navigate(new Uri("/View/PlacePage.xaml?regex=" + searchInput.Text + "&isCityName=" + cityNameRadioButton.IsChecked, UriKind.Relative));
+            if (!isValidWoeidCode())
+            {
+                wrongWoeidMessage.Visibility = Visibility.Visible;
+                return;
+            }
+
+            if (Convert.ToBoolean(cityNameRadioButton.IsChecked))
+            {
+                NavigationService.Navigate(new Uri("/View/PlacePage.xaml?regex=" + searchInput.Text, UriKind.Relative));
+            }
+            else
+            {
+                NavigationService.Navigate(new Uri("/View/WeatherPage.xaml?woeid=" + searchInput.Text, UriKind.Relative));
+            }
         }
 
         /**
@@ -40,6 +53,7 @@ namespace WeatherApp
         private void hideMessages()
         {
             searchBlankMessage.Visibility = Visibility.Collapsed;
+            wrongWoeidMessage.Visibility = Visibility.Collapsed;
         }
 
         /**
@@ -48,6 +62,25 @@ namespace WeatherApp
         private bool isValidSearchText()
         {
             return !String.IsNullOrEmpty(searchInput.Text);
+        }
+        
+        /**
+        * Validation method for Woeid Code
+        */
+        private bool isValidWoeidCode()
+        {
+            if (cityCodeRadioButton.IsChecked==false) {
+                return true;
+            }
+
+            try
+            {
+                int woeid = int.Parse(searchInput.Text);
+                return (woeid > 0);
+            }
+            catch {
+                return false;
+            }
         }
     }
 }
