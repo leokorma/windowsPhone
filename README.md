@@ -25,15 +25,15 @@ Additional features:
 WP7 Weather app.
 
 Grading details (in total 10 points):
-* UI components and layout construction (2 points)
-* Networking handling (3 points)
-* Tombstoning handling (4 points)
-* Code structure and comment (1 point)
+* UI components and layout construction (2 points) => done
+* Networking handling (3 points) => done
+* Tombstoning handling (4 points) => done
+* Code structure and comment (1 point) => done
 
 Additional features:
-* Orientation support
-* Scrolling screen
-* Localization
+* Orientation support => done
+* Scrolling screen => done
+* Localization => done
 
 ---
 

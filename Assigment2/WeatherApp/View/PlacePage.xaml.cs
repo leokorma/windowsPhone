@@ -26,6 +26,9 @@ namespace WeatherApp.View
             InitializeComponent();
         }
 
+        /**
+         * Method called when entering the page.
+         */
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -33,6 +36,7 @@ namespace WeatherApp.View
             hideMessages();
             this.PlaceList.ItemsSource = new List<Place>();
 
+            // Retrieves the parameters sent by the previous page (regex)
             string regex = "";
             NavigationContext.QueryString.TryGetValue("regex", out regex);
 
@@ -42,10 +46,14 @@ namespace WeatherApp.View
                 return;
             }
 
+            // Calls the viewModel in charge of accessing Yahoo to get the data and updates the UI when data is retrieved
             var service = new PlaceViewModel();
             service.searchPlacesByCityName(regex, updateList);
         }
 
+        /**
+        * Function to update List elements depending on the WebClient results
+        */
         private void updateList(List<Place> places) {
             if (places == null || places.Count <= 0)
             {
@@ -63,9 +71,11 @@ namespace WeatherApp.View
             noResultsMessage.Visibility = Visibility.Collapsed;
         }
 
+        /**
+        * Method call when tapping on one list element (cities) to go to the weather page with the correspondent Woied code
+        */
         private void GetWeatherByPlace(object sender, GestureEventArgs e)
         {
-            // íf selected index is -1 (no selection), do nothing
             if (PlaceList.SelectedIndex == -1)
             {
                 return;
@@ -77,7 +87,6 @@ namespace WeatherApp.View
                 return;
             }
             
-            // rest the selected index
             PlaceList.SelectedIndex = -1;
         }
     }

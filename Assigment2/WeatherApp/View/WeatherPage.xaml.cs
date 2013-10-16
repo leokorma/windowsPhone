@@ -28,6 +28,9 @@ namespace WeatherApp.View
             InitializeComponent();
         }
 
+        /**
+         * Method called when entering the page.
+         */
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -35,6 +38,7 @@ namespace WeatherApp.View
             hideMessages();
             hideContainers();
 
+            // Retrieves the parameters sent by the previous page (woeid)
             string woeid = "";
             NavigationContext.QueryString.TryGetValue("woeid", out woeid);
 
@@ -44,10 +48,14 @@ namespace WeatherApp.View
                 return;
             }
 
+            // Calls the viewModel in charge of accessing Yahoo to get the data and updates the UI when data is retrieved
             var service = new PlaceViewModel();
             service.searchPlacesByCodeName(woeid, updateUI);
         }
 
+        /**
+         * Function to update UI elements depending on the WebClient results
+         */
         private void updateUI(Weather weather)
         {
             this.cityTitle.Text = "";
@@ -62,7 +70,7 @@ namespace WeatherApp.View
 
             if (weather.query.results.channel.title.Contains("Error"))
             {
-                errorWoeidMessage.Visibility = Visibility.Visible;                
+                errorWoeidMessage.Visibility = Visibility.Visible;
                 return;
             }
 
@@ -85,6 +93,9 @@ namespace WeatherApp.View
             noWeatherMessage.Visibility = Visibility.Collapsed;
         }
 
+        /**
+        * Helper function for hiding containers (for error cases)
+        */
         private void hideContainers()
         {
             this.todayWeather.Visibility = Visibility.Collapsed;

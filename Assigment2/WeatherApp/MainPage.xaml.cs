@@ -21,6 +21,9 @@ namespace WeatherApp
             InitializeComponent();
         }
 
+        /**
+         * Function to call when search button is clicked
+         */
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             hideMessages();
@@ -39,10 +42,12 @@ namespace WeatherApp
 
             if (Convert.ToBoolean(cityNameRadioButton.IsChecked))
             {
+                // if city name radio button is selected, list all found cities with that name
                 NavigationService.Navigate(new Uri("/View/PlacePage.xaml?regex=" + searchInput.Text, UriKind.Relative));
             }
             else
             {
+                // if city code radio button is selected, go directly to weather page
                 NavigationService.Navigate(new Uri("/View/WeatherPage.xaml?woeid=" + searchInput.Text, UriKind.Relative));
             }
         }
@@ -83,6 +88,9 @@ namespace WeatherApp
             }
         }
 
+        /**
+         * Function to call when text changes so that error messages get cleaned up
+         */
         private void searchInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             hideMessages();

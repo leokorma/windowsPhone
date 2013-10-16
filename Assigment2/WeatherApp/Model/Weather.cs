@@ -10,6 +10,11 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 
+/**
+ * Class that represents Json
+ * Created using json2csharp.com
+ * Modified for better easy access to certain data
+ */
 namespace WeatherApp.Model
 {
     public class Url

@@ -17,6 +17,9 @@ namespace WeatherApp.ViewModel
 {
     public class PlaceViewModel
     {
+        /*
+         * Method to get city list from Yahoo
+         */
         public void searchPlacesByCityName(String name, Action<List<Place>> callback)
         {
             string uri = "http://query.yahooapis.com/v1/public/yql?format=json&q=select * from geo.places where text='" + name + "'";
@@ -26,6 +29,9 @@ namespace WeatherApp.ViewModel
             client.DownloadStringAsync(new Uri(uri), callback);
         }
 
+        /*
+         * Method to get weather from Yahoo
+         */
         public void searchPlacesByCodeName(String code, Action<Weather> callback)
         {
             string uri = "http://query.yahooapis.com/v1/public/yql?format=json&q=select * from weather.forecast where woeid=" + code;
@@ -35,6 +41,9 @@ namespace WeatherApp.ViewModel
             client.DownloadStringAsync(new Uri(uri), callback);
         }
 
+        /**
+         * Callback function for when the WebClient has finalize reaching data (json with cities data) from Yahoo
+         */
         private void processPlacesByName(object sender, DownloadStringCompletedEventArgs e)
         {
             List<Place> places = new List<Place>();
@@ -51,13 +60,16 @@ namespace WeatherApp.ViewModel
                 }
             }
             
-            // if a callback was specified, call it passing the rate.
             var callback = (Action<List<Place>>)e.UserState;
             if (callback != null)
                 callback(places);
             return;
         }
 
+        /**
+         * Helper function to parse json from string to Object
+         * This parser is used as default, since it is possible to receive multiple places within json response string
+         */
         private List<Place> parseMultiplePlaces(string json)
         {
             List<Place> places = new List<Place>();
@@ -71,6 +83,10 @@ namespace WeatherApp.ViewModel
             return places;
         }
 
+        /**
+         * Helper function to parse json from string to Object
+         * This parser is used in case default parser fails, since it may happen that there is only one place in json response string
+         */
         private List<Place> parseUniquePlace(string json)
         {
             List<Place> places = new List<Place>();
@@ -84,6 +100,9 @@ namespace WeatherApp.ViewModel
             return places;
         }
 
+        /**
+         * Callback function for when the WebClient has finalize reaching data (json with weather data) from Yahoo
+         */
         private void processPlacesByCode(object sender, DownloadStringCompletedEventArgs e)
         {
             Weather weather = null;
@@ -94,7 +113,6 @@ namespace WeatherApp.ViewModel
                 weather = JsonConvert.DeserializeObject<Weather>(json); 
             }
 
-            // if a callback was specified, call it passing the rate.
             var callback = (Action<Weather>)e.UserState;
             if (callback != null)
                 callback(weather);

@@ -11,6 +11,11 @@ using System.Windows.Shapes;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
+/**
+ * Class that represents Json
+ * Created using json2csharp.com
+ * Modified for better easy access to certain data
+ */
 namespace WeatherApp.Model
 {
     public class Country
