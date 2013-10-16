@@ -37,12 +37,18 @@ Additional features:
 
 ---
 
-### Final Project: Calendar app
+### Final Project: Backbone App
 ######[Deadline: 28.11.2013]
 
-WP7 Calendar app.
+WP7 backbone app.
 
-Application that uses MongoHQ as database backend and syncronizes app events with mobile calendar.
+My company is creating its first mobile app.
+Initially it is required to build a backbone app where to add different features.
+That backbone app needs to handle localization, tombstoning and other main requirements the same as this school assignment dictates.
+
+In reality, it will use our own REST API to reach data, but because it is still in development, I will user MongoHQ as database-as-service, to simulate database access.
+
+As initial feature I was hoping to be able to develop a user management framework, to do basic CRUD actions over users.
 
 Grading details:
 * Localization
