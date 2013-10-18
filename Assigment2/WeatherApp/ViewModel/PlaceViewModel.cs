@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using WeatherApp.Model;
+using WeatherApp.Model.json;
 
 namespace WeatherApp.ViewModel
 {
@@ -74,10 +75,10 @@ namespace WeatherApp.ViewModel
         {
             List<Place> places = new List<Place>();
 
-            MultiPlaceJson placeJson = JsonConvert.DeserializeObject<MultiPlaceJson>(json);
-            if (placeJson.query.count > 0)
+            MultiGeoPlace jsonResult = JsonConvert.DeserializeObject<MultiGeoPlace>(json);
+            if (jsonResult.query.count > 0)
             {
-                places = placeJson.query.results.place;
+                places = jsonResult.query.results.place;
             }
 
             return places;
@@ -91,10 +92,10 @@ namespace WeatherApp.ViewModel
         {
             List<Place> places = new List<Place>();
 
-            OnePlaceJson placeJson = JsonConvert.DeserializeObject<OnePlaceJson>(json);
-            if (placeJson.query.count > 0)
+            UniqueGeoPlace jsonResult = JsonConvert.DeserializeObject<UniqueGeoPlace>(json);
+            if (jsonResult.query.count > 0)
             {
-                places.Add(placeJson.query.results.place);
+                places.Add(jsonResult.query.results.place);
             }
 
             return places;

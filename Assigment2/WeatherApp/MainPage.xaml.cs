@@ -68,13 +68,14 @@ namespace WeatherApp
         {
             return !String.IsNullOrEmpty(searchInput.Text);
         }
-        
+
         /**
         * Validation method for Woeid Code
         */
         private bool isValidWoeidCode()
         {
-            if (cityCodeRadioButton.IsChecked==false) {
+            if (cityCodeRadioButton.IsChecked == false)
+            {
                 return true;
             }
 
@@ -83,15 +84,32 @@ namespace WeatherApp
                 int woeid = int.Parse(searchInput.Text);
                 return (woeid > 0);
             }
-            catch {
+            catch
+            {
                 return false;
             }
         }
 
         /**
-         * Function to call when text changes so that error messages get cleaned up
+         * Function to execute actions when input text changes
          */
         private void searchInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            hideMessages();
+        }
+
+        /**
+         * Function to execute actions when radio button for city name is clicked
+         */
+        private void cityNameRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            hideMessages();
+        }
+
+        /**
+         * Function to execute actions when radio button for city code is clicked
+         */
+        private void cityCodeRadioButton_Click(object sender, RoutedEventArgs e)
         {
             hideMessages();
         }

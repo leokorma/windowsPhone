@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using WeatherApp.Model;
+using WeatherApp.Model.json;
 using System.Windows.Resources;
 using System.IO;
 
@@ -76,7 +77,7 @@ namespace WeatherApp.View
 
             this.cityTitle.Text = weather.query.results.channel.location.city + ", " + weather.query.results.channel.location.country;
 
-            this.todayTemperature.Text = weather.fullTemp;
+            this.todayTemperature.Text = weather.query.results.channel.item.condition.temp + weather.query.results.channel.units.temperature;
 
             this.ForecastList.ItemsSource = weather.query.results.channel.item.forecast;
 

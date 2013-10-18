@@ -10,30 +10,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 
-/**
- * Class that represents Json
- * Created using json2csharp.com
- * Modified for better easy access to certain data
- */
-namespace WeatherApp.Model
+namespace WeatherApp.Model.json
 {
-    public class Url
-    {
-        public string __invalid_name__execution_start_time { get; set; }
-        public string __invalid_name__execution_stop_time { get; set; }
-        public string __invalid_name__execution_time { get; set; }
-        public string content { get; set; }
-    }
-
-    public class Diagnostics
-    {
-        public string publiclyCallable { get; set; }
-        public Url url { get; set; }
-        public string __invalid_name__user_time { get; set; }
-        public string __invalid_name__service_time { get; set; }
-        public string __invalid_name__build_version { get; set; }
-    }
-
     public class Location
     {
         public string city { get; set; }
@@ -143,19 +121,11 @@ namespace WeatherApp.Model
         public int count { get; set; }
         public string created { get; set; }
         public string lang { get; set; }
-        public Diagnostics diagnostics { get; set; }
         public Results results { get; set; }
     }
 
     public class Weather
     {
         public Query query { get; set; }
-
-        private string _fullTemp;
-        public string fullTemp
-        {
-            get { return this.query.results.channel.item.condition.temp + this.query.results.channel.units.temperature; }
-            set { _fullTemp = value; }
-        }
     }
 }

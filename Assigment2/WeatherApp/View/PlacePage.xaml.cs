@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using WeatherApp.Model;
+using WeatherApp.Model.json;
 
 namespace WeatherApp.View
 {

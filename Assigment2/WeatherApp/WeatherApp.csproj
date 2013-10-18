@@ -73,8 +73,11 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Place.cs" />
-    <Compile Include="Model\Weather.cs" />
+    <Compile Include="Model\City.cs" />
+    <Compile Include="Model\json\MultiGeoPlace.cs" />
+    <Compile Include="Model\ObservableObject.cs" />
+    <Compile Include="Model\json\UniqueGeoPlace.cs" />
+    <Compile Include="Model\json\Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\PlaceViewModel.cs" />
     <Compile Include="View\WeatherPage.xaml.cs">

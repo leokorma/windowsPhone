@@ -142,6 +142,15 @@ namespace WeatherApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select which type of search you prefer.
+        /// </summary>
+        public static string radioButtonTitle {
+            get {
+                return ResourceManager.GetString("radioButtonTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Results.
         /// </summary>
         public static string resultsTitle {
@@ -169,7 +178,7 @@ namespace WeatherApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please write here a city name or code.
+        ///   Looks up a localized string similar to Please write here your search.
         /// </summary>
         public static string searchTitle {
             get {

@@ -34,21 +34,20 @@
             </Grid.RowDefinitions>
             
             <!--Search Block-->
-            <ScrollViewer Name="searchViewer">
-                <StackPanel HorizontalAlignment="Stretch" Margin="6,6,0,0" Name="searchPanel" VerticalAlignment="Top">
+            <StackPanel HorizontalAlignment="Stretch" Margin="6,6,0,0" Name="searchPanel" VerticalAlignment="Top">
 
-                    <TextBlock Name="searchTitle" Text="{Binding Path=AppResources.searchTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
-                    <TextBox Name="searchInput" Text="" TextChanged="searchInput_TextChanged" />
-                    <TextBlock Name="searchBlankMessage" Text="{Binding Path=AppResources.searchBlankMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
-                    <TextBlock Name="wrongWoeidMessage" Text="{Binding Path=AppResources.wrongWoeidMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
+                <TextBlock Name="radioButtonTitle" Text="{Binding Path=AppResources.radioButtonTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
+                <RadioButton Content="{Binding Path=AppResources.cityNameRadioButton, Source={StaticResource LocalizedStrings}}" Name="cityNameRadioButton" GroupName="searchRadioGroup" IsChecked="True" Click="cityNameRadioButton_Click"/>
+                <RadioButton Content="{Binding Path=AppResources.cityCodeRadioButton, Source={StaticResource LocalizedStrings}}" Name="cityCodeRadioButton" GroupName="searchRadioGroup" Click="cityCodeRadioButton_Click"/>
 
-                    <RadioButton Content="{Binding Path=AppResources.cityNameRadioButton, Source={StaticResource LocalizedStrings}}" Name="cityNameRadioButton" GroupName="searchRadioGroup" IsChecked="True" />
-                    <RadioButton Content="{Binding Path=AppResources.cityCodeRadioButton, Source={StaticResource LocalizedStrings}}" Name="cityCodeRadioButton" GroupName="searchRadioGroup" />
+                <TextBlock Name="searchTitle" Text="{Binding Path=AppResources.searchTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,30,12,0" />
+                <TextBox Name="searchInput" Text="" TextChanged="searchInput_TextChanged" />
+                <TextBlock Name="searchBlankMessage" Text="{Binding Path=AppResources.searchBlankMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
+                <TextBlock Name="wrongWoeidMessage" Text="{Binding Path=AppResources.wrongWoeidMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
 
-                    <Button Content="{Binding Path=AppResources.searchButton, Source={StaticResource LocalizedStrings}}" Name="searchButton" Width="160" HorizontalAlignment="Right" Margin="0,0,20,0" Click="searchButton_Click" />
-                    
-                </StackPanel>                
-            </ScrollViewer>
+                <Button Content="{Binding Path=AppResources.searchButton, Source={StaticResource LocalizedStrings}}" Name="searchButton" Width="160" HorizontalAlignment="Right" Margin="0,0,20,0" Click="searchButton_Click" />
+
+            </StackPanel>
         </Grid>
     </Grid>
 
