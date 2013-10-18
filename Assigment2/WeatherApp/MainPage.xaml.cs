@@ -10,6 +10,10 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using WeatherApp.ViewModel;
+using System.Collections.ObjectModel;
+using WeatherApp.Model;
+using Newtonsoft.Json;
 
 namespace WeatherApp
 {
@@ -42,13 +46,40 @@ namespace WeatherApp
 
             if (Convert.ToBoolean(cityNameRadioButton.IsChecked))
             {
-                // if city name radio button is selected, list all found cities with that name
-                NavigationService.Navigate(new Uri("/View/PlacePage.xaml?regex=" + searchInput.Text, UriKind.Relative));
+                downloadCitiesJson(searchInput.Text);
             }
             else
             {
                 // if city code radio button is selected, go directly to weather page
                 NavigationService.Navigate(new Uri("/View/WeatherPage.xaml?woeid=" + searchInput.Text, UriKind.Relative));
+            }
+        }
+
+        /**
+        * Method called when entering the page.
+        */
+        private void downloadCitiesJson(string name)
+        {
+            string uri = "http://query.yahooapis.com/v1/public/yql?format=json&q=select * from geo.places where text='" + name + "'";
+
+            WebClient client = new WebClient();
+            client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(processCities);
+            client.DownloadStringAsync(new Uri(uri));
+        }
+
+        private void processCities(object sender, DownloadStringCompletedEventArgs e)
+        {
+            App.CityViewModel.processJson(sender, e);
+
+            ObservableCollection<City> cities = App.CityViewModel.Cities;
+            if (cities != null && cities.Count > 0)
+            {
+                string json = JsonConvert.SerializeObject(cities);
+                NavigationService.Navigate(new Uri("/View/CityPage.xaml?json=" + json, UriKind.Relative));
+            }
+            else
+            {
+                noCitiesFoundMessage.Visibility = Visibility.Visible;
             }
         }
 
@@ -59,6 +90,7 @@ namespace WeatherApp
         {
             searchBlankMessage.Visibility = Visibility.Collapsed;
             wrongWoeidMessage.Visibility = Visibility.Collapsed;
+            noCitiesFoundMessage.Visibility = Visibility.Collapsed;
         }
 
         /**
