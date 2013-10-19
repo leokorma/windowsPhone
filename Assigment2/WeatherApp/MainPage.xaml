@@ -44,8 +44,7 @@
                 <TextBox Name="searchInput" Text="" TextChanged="searchInput_TextChanged" />
                 <TextBlock Name="searchBlankMessage" Text="{Binding Path=AppResources.searchBlankMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
                 <TextBlock Name="wrongWoeidMessage" Text="{Binding Path=AppResources.wrongWoeidMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
-                <TextBlock Name="noCitiesFoundMessage" Text="{Binding Path=AppResources.noCitiesFoundMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
-                
+
                 <Button Content="{Binding Path=AppResources.searchButton, Source={StaticResource LocalizedStrings}}" Name="searchButton" Width="160" HorizontalAlignment="Right" Margin="0,0,20,0" Click="searchButton_Click" />
 
             </StackPanel>
