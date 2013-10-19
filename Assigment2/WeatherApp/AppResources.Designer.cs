@@ -70,15 +70,6 @@ namespace WeatherApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cities.
-        /// </summary>
-        public static string cities {
-            get {
-                return ResourceManager.GetString("cities", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to City Code.
         /// </summary>
         public static string cityCodeRadioButton {
@@ -115,11 +106,11 @@ namespace WeatherApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No Cities Found.
+        ///   Looks up a localized string similar to No Results Found.
         /// </summary>
-        public static string noCitiesFoundMessage {
+        public static string noResultsMessage {
             get {
-                return ResourceManager.GetString("noCitiesFoundMessage", resourceCulture);
+                return ResourceManager.GetString("noResultsMessage", resourceCulture);
             }
         }
         

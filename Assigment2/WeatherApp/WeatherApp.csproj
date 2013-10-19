@@ -79,11 +79,7 @@
     <Compile Include="Model\json\UniqueGeoPlace.cs" />
     <Compile Include="Model\json\Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\CityViewModel.cs" />
     <Compile Include="ViewModel\PlaceViewModel.cs" />
-    <Compile Include="View\CityPage.xaml.cs">
-      <DependentUpon>CityPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\WeatherPage.xaml.cs">
       <DependentUpon>WeatherPage.xaml</DependentUpon>
     </Compile>
@@ -99,10 +95,6 @@
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\CityPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\WeatherPage.xaml">
       <Generator>MSBuild:Compile</Generator>

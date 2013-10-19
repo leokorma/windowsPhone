@@ -144,8 +144,8 @@
   <data name="searchTitle" xml:space="preserve">
     <value>Please write here your search</value>
   </data>
-  <data name="noCitiesFoundMessage" xml:space="preserve">
-    <value>No Cities Found</value>
+  <data name="noResultsMessage" xml:space="preserve">
+    <value>No Results Found</value>
   </data>
   <data name="selectResultsMessage" xml:space="preserve">
     <value>Select one city to see the weather</value>
@@ -164,8 +164,5 @@
   </data>
   <data name="radioButtonTitle" xml:space="preserve">
     <value>Please select which type of search you prefer</value>
-  </data>
-  <data name="cities" xml:space="preserve">
-    <value>Cities</value>
   </data>
 </root>

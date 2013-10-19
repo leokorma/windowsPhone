@@ -12,28 +12,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using WeatherApp.ViewModel;
 
 namespace WeatherApp
 {
     public partial class App : Application
     {
-        /// <summary>
-        /// App level ViewModel instance
-        /// </summary>
-        private static CityViewModel _cityViewModel = null;
-        public static CityViewModel CityViewModel
-        {
-            get
-            {
-                if (_cityViewModel == null)
-                {
-                    _cityViewModel = new CityViewModel();
-                }
-                return _cityViewModel;
-            }
-        }
-
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
