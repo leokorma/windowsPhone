@@ -16,17 +16,17 @@ using WeatherApp.Model.json;
 
 namespace WeatherApp.ViewModel
 {
-    public class PlaceViewModel
+    public class ServiceViewModel
     {
         /*
          * Method to get city list from Yahoo
          */
-        public void searchPlacesByCityName(String name, Action<List<Place>> callback)
+        public void searchCitiesByCityName(String name, Action<List<City>> callback)
         {
             string uri = "http://query.yahooapis.com/v1/public/yql?format=json&q=select * from geo.places where text='" + name + "'";
 
             WebClient client = new WebClient();
-            client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(processPlacesByName);
+            client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(processCitiesByName);
             client.DownloadStringAsync(new Uri(uri), callback);
         }
 
@@ -45,9 +45,9 @@ namespace WeatherApp.ViewModel
         /**
          * Callback function for when the WebClient has finalize reaching data (json with cities data) from Yahoo
          */
-        private void processPlacesByName(object sender, DownloadStringCompletedEventArgs e)
+        private void processCitiesByName(object sender, DownloadStringCompletedEventArgs e)
         {
-            List<Place> places = new List<Place>();
+            List<City> cities = new List<City>();
 
             if (e.Error == null)
             {
@@ -55,15 +55,17 @@ namespace WeatherApp.ViewModel
 
                 try
                 {
-                    places = parseMultiplePlaces(json);
-                }catch(Exception){
-                    places = parseUniquePlace(json);
+                    cities = parseMultipleCities(json);
+                }
+                catch (Exception)
+                {
+                    cities = parseUniqueCity(json);
                 }
             }
-            
-            var callback = (Action<List<Place>>)e.UserState;
+
+            var callback = (Action<List<City>>)e.UserState;
             if (callback != null)
-                callback(places);
+                callback(cities);
             return;
         }
 
@@ -71,34 +73,47 @@ namespace WeatherApp.ViewModel
          * Helper function to parse json from string to Object
          * This parser is used as default, since it is possible to receive multiple places within json response string
          */
-        private List<Place> parseMultiplePlaces(string json)
+        private List<City> parseMultipleCities(string json)
         {
-            List<Place> places = new List<Place>();
+            List<City> cities = new List<City>();
 
             MultiGeoPlace jsonResult = JsonConvert.DeserializeObject<MultiGeoPlace>(json);
             if (jsonResult.query.count > 0)
             {
-                places = jsonResult.query.results.place;
+                foreach (Place place in jsonResult.query.results.place)
+                {
+                    City city = new City();
+                    city.name = place.name;
+                    city.woeid = place.woeid;
+                    city.country = place.country.content;
+                    cities.Add(city);
+                }
             }
 
-            return places;
+            return cities;
         }
 
         /**
          * Helper function to parse json from string to Object
          * This parser is used in case default parser fails, since it may happen that there is only one place in json response string
          */
-        private List<Place> parseUniquePlace(string json)
+        private List<City> parseUniqueCity(string json)
         {
-            List<Place> places = new List<Place>();
+            List<City> cities = new List<City>();
 
             UniqueGeoPlace jsonResult = JsonConvert.DeserializeObject<UniqueGeoPlace>(json);
             if (jsonResult.query.count > 0)
             {
-                places.Add(jsonResult.query.results.place);
+                Place place = jsonResult.query.results.place;
+
+                City city = new City();
+                city.name = place.name;
+                city.woeid = place.woeid;
+                city.country = place.country.content;
+                cities.Add(city);
             }
 
-            return places;
+            return cities;
         }
 
         /**
@@ -111,7 +126,7 @@ namespace WeatherApp.ViewModel
             if (e.Error == null)
             {
                 string json = e.Result;
-                weather = JsonConvert.DeserializeObject<Weather>(json); 
+                weather = JsonConvert.DeserializeObject<Weather>(json);
             }
 
             var callback = (Action<Weather>)e.UserState;

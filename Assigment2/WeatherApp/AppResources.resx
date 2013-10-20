@@ -132,8 +132,8 @@
   <data name="PageTitle" xml:space="preserve">
     <value>weather app</value>
   </data>
-  <data name="resultsTitle" xml:space="preserve">
-    <value>Results</value>
+  <data name="citiesTitle" xml:space="preserve">
+    <value>Cities</value>
   </data>
   <data name="searchBlankMessage" xml:space="preserve">
     <value>Text cannot be empty.</value>

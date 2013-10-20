@@ -43,7 +43,7 @@ namespace WeatherApp
             if (Convert.ToBoolean(cityNameRadioButton.IsChecked))
             {
                 // if city name radio button is selected, list all found cities with that name
-                NavigationService.Navigate(new Uri("/View/PlacePage.xaml?regex=" + searchInput.Text, UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/CityPage.xaml?regex=" + searchInput.Text, UriKind.Relative));
             }
             else
             {

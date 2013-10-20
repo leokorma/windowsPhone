@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="WeatherApp.View.PlacePage"
+    x:Class="WeatherApp.View.CityPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -32,19 +32,19 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <StackPanel>
-                <TextBlock Text="{Binding Path=AppResources.resultsTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" />
+                <TextBlock Text="{Binding Path=AppResources.citiesTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" />
                 <TextBlock Name="selectResultsMessage" Text="{Binding Path=AppResources.selectResultsMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
                 <TextBlock Name="errorResultsMessage" Text="{Binding Path=AppResources.errorResultsMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
                 <TextBlock Name="noResultsMessage" Text="{Binding Path=AppResources.noResultsMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}" Visibility="Collapsed" TextWrapping="Wrap" />
             </StackPanel>
-            
-            <ListBox Name="PlaceList" Margin="0,12,0,0" Grid.Row="1" Tap="GetWeatherByPlace">
+
+            <ListBox Name="CityList" Margin="0,12,0,0" Grid.Row="1" Tap="GetWeatherByCity">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border BorderThickness="10,0,0,0" BorderBrush="{StaticResource PhoneAccentBrush}" Margin="12,0,12,10">
-                            <TextBlock Text="{Binding FullName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" />
+                            <TextBlock Text="{Binding fullName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" />
                         </Border>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

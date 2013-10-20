@@ -74,17 +74,17 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\City.cs" />
-    <Compile Include="Model\json\MultiGeoPlace.cs" />
+    <Compile Include="Model\MultiGeoPlace.cs" />
     <Compile Include="Model\ObservableObject.cs" />
-    <Compile Include="Model\json\UniqueGeoPlace.cs" />
-    <Compile Include="Model\json\Weather.cs" />
+    <Compile Include="Model\UniqueGeoPlace.cs" />
+    <Compile Include="Model\Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\PlaceViewModel.cs" />
+    <Compile Include="ViewModel\ServiceViewModel.cs" />
     <Compile Include="View\WeatherPage.xaml.cs">
       <DependentUpon>WeatherPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PlacePage.xaml.cs">
-      <DependentUpon>PlacePage.xaml</DependentUpon>
+    <Compile Include="View\CityPage.xaml.cs">
+      <DependentUpon>CityPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -100,7 +100,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PlacePage.xaml">
+    <Page Include="View\CityPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

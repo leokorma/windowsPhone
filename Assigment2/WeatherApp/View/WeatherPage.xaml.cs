@@ -50,7 +50,7 @@ namespace WeatherApp.View
             }
 
             // Calls the viewModel in charge of accessing Yahoo to get the data and updates the UI when data is retrieved
-            var service = new PlaceViewModel();
+            var service = new ServiceViewModel();
             service.searchPlacesByCodeName(woeid, updateUI);
         }
 
