@@ -40,9 +40,9 @@ Additional features:
 ### Final Project: Calendar app
 ######[Deadline: 28.11.2013]
 
-WP7 Calendar app.
+WP7 Network app.
 
-Application that uses MongoHQ as database backend and syncronizes app events with mobile calendar.
+Network measurements app with MongoHQ as database backend.
 
 Grading details:
 * Localization
